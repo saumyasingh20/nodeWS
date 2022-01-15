@@ -13,18 +13,6 @@ app.use(express.static('assets'));
 
 
 var contactList = [
-    {
-        name:"Saumya",
-        phone:"8527647170"
-    },
-    {
-        name:"Tony Stark",
-        phone:"7854657788"
-    },
-    {
-        name:"Rock",
-        phone:"7868766786"
-    }
     ]
 
 app.get('/',function(request,response){
@@ -41,8 +29,7 @@ app.post('/create-contact',function(req,res){
 
     contactList.push({
         name:req.body.name,
-        phone:req.body.phone,
-        email:req.body.email
+        phone:req.body.phone
     });
 
     return res.redirect('/');
